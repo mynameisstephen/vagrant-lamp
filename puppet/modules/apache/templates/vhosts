@@ -1,0 +1,32 @@
+<VirtualHost *:80>
+	DocumentRoot /var/www
+	
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	
+	<Directory /var/www/>
+		Options -Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog /var/log/apache2/error.log
+	LogLevel warn
+	CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
+
+<VirtualHost *:443>
+    DocumentRoot /var/www
+
+    <Directory /vagrant>
+        AllowOverride All
+        Allow from All
+    </Directory>
+
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+</VirtualHost>
