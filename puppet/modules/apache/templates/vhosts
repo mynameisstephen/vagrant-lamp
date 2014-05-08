@@ -1,11 +1,11 @@
 <VirtualHost *:80>
 	DocumentRoot /var/www
-	
+
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	
+
 	<Directory /var/www/>
 		Options -Indexes FollowSymLinks MultiViews
 		AllowOverride All
@@ -21,7 +21,7 @@
 <VirtualHost *:443>
     DocumentRoot /var/www
 
-    <Directory /vagrant>
+    <Directory /var/www>
         AllowOverride All
         Allow from All
     </Directory>
