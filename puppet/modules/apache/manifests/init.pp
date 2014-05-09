@@ -15,7 +15,7 @@ class apache {
         "/etc/apache2/mods-enabled/rewrite.load":
             ensure  => link,
             target  => "/etc/apache2/mods-available/rewrite.load",
-            require => Package['apache2']
+            require => Package["apache2"]
     }
 
     file {
@@ -23,7 +23,7 @@ class apache {
     		ensure => link,
 	    	target => "/etc/apache2/mods-available/ssl.conf",
     		notify => Service["apache2"],
-            require => Package['apache2']
+            require => Package["apache2"]
     }
 
     file {
@@ -31,7 +31,7 @@ class apache {
     		ensure => link,
 	    	target => "/etc/apache2/mods-available/ssl.load",
     		notify => Service["apache2"],
-            require => Package['apache2']	
+            require => Package["apache2"]	
     }
 
     file {
