@@ -4,6 +4,7 @@ class php {
 			"php5",
 			"php5-cli",
 			"php5-mysql",
+			"php5-sqlite",
 		    "php5-mcrypt",
 		    "php5-gd",
 		    "php5-curl",			
